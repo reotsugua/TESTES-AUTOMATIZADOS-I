@@ -12,4 +12,19 @@ public class PersonService {
         }
 
     }
+
+    public String podeVotar(Person person){
+        if (person.getAge() < 16) {
+            return "Não pode votar";
+        } else if ((
+                        person.getAge() >= 16 &&
+                        person.getAge() < 18) ||
+                        person.getAge() > 70
+                    ) {
+            return "Voto Opcional";
+        } else {
+            return "Voto Obrigatório";
+        }
+
+    }
 }
